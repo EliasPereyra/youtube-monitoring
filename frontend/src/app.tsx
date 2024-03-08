@@ -1,12 +1,12 @@
-import { useState } from "preact/hooks";
+import { useYoutubeStats } from "./useYoutubeStats";
 
 export function App() {
-  const [suscribers, setSuscribers] = useState(0);
+  const { suscribers } = useYoutubeStats();
 
   return (
     <>
       <h1 className="text-3xl font-bold underline">Youtbe Monitoring</h1>
-      <p>Suscribers: {suscribers}</p>
+      <p>Suscribers: {JSON.stringify(suscribers.length)}</p>
     </>
   );
 }
